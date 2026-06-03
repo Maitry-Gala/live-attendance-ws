@@ -11,12 +11,17 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.9.1"
   },
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.6",
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongoose": "^9.6.3"
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.3",
+    "zod": "^4.4.3"
   }
 }
