@@ -53,9 +53,9 @@ export const requireClassTeacher = async (
   res: Response,
   next: NextFunction,
 ) => {
-  const classId = req.params.classId;
+  const id = req.params.classId;
   try {
-    const classroom = await ClassModel.findById(classId);
+    const classroom = await ClassModel.findById(id);
 
     if (!classroom) {
       return res.status(404).json({
@@ -73,9 +73,9 @@ export const requireClassTeacher = async (
 
     next();
   } catch (e) {
-    return res.status(401).json({
+    return res.status(500).json({
       success: false,
-      error: "Unauthorized, token missing or invalid",
+      error: "Something went wrong",
     });
   }
   
