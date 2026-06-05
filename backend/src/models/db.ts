@@ -1,11 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 
-enum Role {
+export enum Role {
   teacher = "teacher",
   student = "student",
 }
 
-enum Status {
+export enum Status {
   present = "present",
   absent = "absent",
 }

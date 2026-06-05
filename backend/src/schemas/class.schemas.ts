@@ -7,3 +7,8 @@ export const createClassSchema = z.object({
 export const addStudentSchema = z.object({
   studentId: z.string().min(1, "Student ID is required"),
 });
+
+export const startAttendanceSchema = z.object({
+  studentId: z.string().min(1, "Class ID is required"),
+});
+

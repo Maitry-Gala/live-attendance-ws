@@ -8,6 +8,7 @@ export const signupSchema = z.object({
     .min(6)
     .max(10)
     .regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[@!$%*?&])[A-Za-z\d@!$%*?&]+$/),
+  role: z.union([z.literal('teacher'),z.literal('student')])
 });
 
 export const signinSchema = z.object({

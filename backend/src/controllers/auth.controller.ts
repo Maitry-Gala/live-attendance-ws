@@ -1,9 +1,8 @@
 import type { Request, Response } from "express";
-import { ClassModel, UserModel } from "../models/db.js";
+import { UserModel } from "../models/db.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECERT!;
 
 export const signupUser = async (req: Request, res: Response) => {
   const { name, email, password, role } = req.body;
@@ -69,13 +68,13 @@ export const signinUser = async (req: Request, res: Response) => {
         error: "Invalid email or password",
       });
     }
-
+  
     const token = jwt.sign(
       {
         userId: user._id.toString(),
         role: user.role,
       },
-      JWT_SECRET,
+      process.env.JWT_SECERT!,
       {
         expiresIn: "1d",
       }
