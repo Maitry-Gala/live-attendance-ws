@@ -10,7 +10,7 @@ classRouter.post("/class",validate(createClassSchema),auth,requireTeacher,create
 
 classRouter.post("/class/:id/add-student",validate(addStudentSchema),auth,requireTeacher,requireClassTeacher,addStudent);
 
-classRouter.get("/class:id",auth,requireClassAccess,getClass);
+classRouter.get("/class/:id",auth,requireClassAccess,getClass);
 
 classRouter.get("/students",auth,requireTeacher,getStudents);
 

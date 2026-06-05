@@ -74,7 +74,7 @@ export const signinUser = async (req: Request, res: Response) => {
         userId: user._id.toString(),
         role: user.role,
       },
-      process.env.JWT_SECERT!,
+      process.env.JWT_SECRET!,
       {
         expiresIn: "1d",
       }
